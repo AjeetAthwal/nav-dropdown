@@ -2,18 +2,17 @@
     --color1: chocolate;
     --color2: coral;
     --color3: rgb(158, 80, 24);
+    --text-color: black;
     --nav-height: 50px;
     --nav-li-padding: 30px;
 }
 
-li{
-    padding-left: var(--nav-li-padding);
-    padding-right: var(--nav-li-padding);
-    user-select: none;
-    height: 100%;
-    background-color: var(--color2);
-    display: flex;
-    flex-direction: column;
+nav{
+    height: var(--nav-height);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 ul{
@@ -26,18 +25,18 @@ ul{
     background-color: var(--color1);
 }
 
-nav{
-    height: var(--nav-height);
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+ul .dropdown-content{
+    flex-direction: column;
 }
 
-li>a{
-    text-decoration: none;
-    color: black;
-    margin: auto;
+li{
+    padding-left: var(--nav-li-padding);
+    padding-right: var(--nav-li-padding);
+    user-select: none;
+    height: 100%;
+    background-color: var(--color2);
+    display: flex;
+    flex-direction: column;
 }
 
 li:hover{
@@ -45,17 +44,19 @@ li:hover{
     cursor: pointer;
 }
 
+li>a{
+    text-decoration: none;
+    color: var(--text-color);
+    margin: auto;
+}
+
 .dropdown-content-div{
     display: none;
 }
 
-.dropdown:hover .dropdown-content-div{
+.visible{
     display: block;
     position: absolute;
-}
-
-ul .dropdown-content{
-    flex-direction: column;
 }
 
 .active>li{
